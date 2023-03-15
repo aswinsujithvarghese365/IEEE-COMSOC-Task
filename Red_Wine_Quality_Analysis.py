@@ -32,3 +32,26 @@ print("The quality of Red Wine will be mostly",st.mode(quality))
 print("Average pH value = ",np.mean(pH).round(5))
 # Finding the average using sum() function
 print("Average sulphate rate = ",(np.sum(sulphates)/dataset_size).round(5))
+print("Average of fixed acidity of red wine is",np.mean(fixed_acidity).round(5))
+
+#Graphs
+values = np.array(df["alcohol"]).tolist()
+alc_cont=[8,9,10,11,12,13,14]
+plt.hist(values,bins=alc_cont,color="magenta",edgecolor="black",histtype="bar",rwidth=0.6)
+plt.title("Histogram of Alcohol content")
+plt.xlabel("Alcohol Content ->")
+plt.ylabel("No. of Red Wines ->")
+plt.show()
+
+plt.boxplot(alcohol)
+plt.title("Boxplot of Alcohol content")
+plt.show()
+
+plt.boxplot(pH)
+plt.title("Boxplot of pH value")
+plt.show()
+
+plt.scatter(np.arange(0,1599,1), fixed_acidity, c ="pink",edgecolors="black")
+plt.title("Scatter plot of Fixed Acidity")
+plt.ylabel("Fixed Acidity ->")
+plt.show()
